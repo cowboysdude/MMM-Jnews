@@ -25,7 +25,7 @@ This repository is maintained by Cowboysdude
        {
         module: 'MMM-Jnews',
         config: {
-		     apiKey: "YOUR API KEY",    // https://www.wunderground.com/weather/api  select the middle plan... 
+		     apiKey: "YOUR API KEY", 
 	       image : true or false, [default is false, Raspberry Pi's don't like the images]
          rotateInterval: 25 * 1000 [This is default set to 25 seconds, you can change this if you'd like]
 	     }
