@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:600');
+.MMM-Jnews {
+	max-width: 95%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.MMM-Jnews div {
+	color: #fff;
+	font-family: Muli, sans-serif;
+	padding: 4px;
+}
+
+.MMM-Jnews .container {
+	display: flex;
+}
+
+.MMM-Jnews .fixed {
+	width: 80px;
+}
+
+.MMM-Jnews .flex-item {
+	flex-grow: 1;
+	font-size: 16px;
+	min-height: 5vh;
+	text-align: left;
+	line-height: 110%;
+	max-width: 690px;
+	padding: 0 5px 0 10px;
+	color: #BDDCFF;
+}
+
+.MMM-Jnews .image {
+	width: 90%;
+	height: 90%;
+	border-style: solid;
+	border-color: #92a8d1;
+}
+
+.MMM-Jnews .dateColor {
+	color: #c0c0c0;
+}
