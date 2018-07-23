@@ -15,9 +15,7 @@ This repository is maintained by Cowboysdude
 
 ## Your terminal installation instructions
 
-* `git clone https://github.com/cowboysdude/MMM-Jnews` into the `~/MagicMirror/modules` directory.
-*  `~MagicMirror/modules/MMM-Jnews`
-*  `npm install`
+* `git clone https://github.com/cowboysdude/MMM-Jnews` into the `~/MagicMirror/modules` directory.`
 
 ## Get your free API key here 
 
