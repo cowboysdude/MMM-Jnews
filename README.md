@@ -25,10 +25,14 @@ This repository is maintained by Cowboysdude
        {
         module: 'MMM-Jnews',
         config: {
-		     apiKey: "YOUR API KEY", 
-	       image : true or false, [default is false, Raspberry Pi's don't like the images]
-         rotateInterval: 25 * 1000 [This is default set to 25 seconds, you can change this if you'd like]
+	apiKey: "YOUR API KEY", 
+	image : true,
+        rotateInterval: 25 * 1000 
 	     }
        },
-       
+   
+   Default on image is set to false because Raspberry Pi's take a lot of time and create too much heat loading them :)
+   This is default set to 25 seconds on the rotateInterval, you can change this if you'd like      
+
+
 ## Start your mirror . . . enjoy! 
