@@ -28,7 +28,7 @@ Module.register("MMM-Jnews", {
             "nl": "nl",
             "ru": "ru",
 			"he": "he",
-            "no": "no",
+            "nb": "no",
             "pt": "pt",
             "se": "se",
             "ud": "ud",
