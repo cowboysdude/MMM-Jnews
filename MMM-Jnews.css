@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:600');
 .MMM-Jnews {
 	max-width: 95%;
+	min-height: 100px;
+	max-height: 100px;
+	height: 100%;
 	display: inline-block;
 	vertical-align: middle;
+	padding-bottom: 2px;
 }
 
 .MMM-Jnews div {
