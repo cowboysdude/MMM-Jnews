@@ -27,7 +27,8 @@ This repository is maintained by Cowboysdude
         config: {
 	apiKey: "YOUR API KEY", 
 	image : true,
-        rotateInterval: 25 * 1000 
+        rotateInterval: 25 * 1000,
+	clang: 'fr' //language override  
 	     }
        },
    
