@@ -11,7 +11,9 @@ This repository is maintained by Cowboysdude
 ![](capture.png) 
 
 *Automatically adjusts languge and all other settings based on your config.js!
-[Will ONLY work for these language - ar,de,en,es,fr,zh,it,nl,ru,he,no,pt,se,ud]
+[Will ONLY work for these language - ar,de,en,es,fr,zh,it,nl,ru,he,no,pt,se,ud]   
+
+It can automatically adjust to users language OR you can do a language override in the config file [see example config below].
 
 ## Your terminal installation instructions
 
