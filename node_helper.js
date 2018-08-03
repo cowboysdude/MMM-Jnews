@@ -11,7 +11,7 @@
  module.exports = NodeHelper.create({
 
 start: function() {
-    	console.log("Starting module: " + this.name);
+    	console.log("Starting module: " + this.name); 
     },
     
      getNews: function(url) {
@@ -30,6 +30,9 @@ start: function() {
          if (notification === 'GET_NEWS') {
              this.getNews(payload);
          }
+		 if(notification === 'CONFIG'){
+			this.config = payload;
+		}	
      }
  });
  

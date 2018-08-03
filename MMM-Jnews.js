@@ -12,9 +12,10 @@ Module.register("MMM-Jnews", {
         animationSpeed: 110,
         initialLoadDelay: 5, // 0 seconds delay
         retryDelay: 2500,
-        rotateInterval: 25 * 1000,
+        rotateInterval: 60 * 60 * 1000,
         apiKey: "",
-		image: false
+		image: false,
+		clang: ""
     },
 	
 	langTrans: {
@@ -28,12 +29,19 @@ Module.register("MMM-Jnews", {
             "nl": "nl",
             "ru": "ru",
 			"he": "he",
-            "nb": "no",
+            "no": "no",
             "pt": "pt",
             "se": "se",
             "ud": "ud",
 			"sv": "nl",
         },
+		
+	//	 getTranslations: function() {
+    //    return {
+    //        de: "translations/de.json"
+    //    };
+
+  //  },
 
     getScripts: function() {
         return ["moment.js"];
@@ -51,7 +59,8 @@ Module.register("MMM-Jnews", {
         this.config.lang = this.config.lang || config.language;
 		var lang = this.langTrans[config.language];
         this.loaded = true;
-        this.url = "https://newsapi.org/v2/top-headlines?language="+lang+"&pageSize=50&apiKey="+this.config.apiKey;
+        this.sendSocketNotification("CONFIG", this.config);   
+        this.url = this.getUrl();
         this.news = {};
         this.activeItem = 0;
         this.rotateInterval = null;
@@ -59,6 +68,22 @@ Module.register("MMM-Jnews", {
 		this.getNews();
 		console.log(this.url);
     },
+	
+	getUrl: function() {
+		var url = null;
+		 clang = this.config.clang;
+		 key = this.config.apiKey;
+		 
+		console.log(this.config.lang+ " " +key);
+
+		if (clang != "") {
+			url = "https://newsapi.org/v2/top-headlines?language="+clang+"&pageSize=50&apiKey="+key
+		} else   {
+			url = "https://newsapi.org/v2/top-headlines?language="+this.config.lang+"&pageSize=50&apiKey="+key
+		} 
+		return url;
+	},
+
 
     scheduleCarousel: function() {
         console.log("Scheduling items");
@@ -110,13 +135,13 @@ Module.register("MMM-Jnews", {
                 else if (Math.round(seconds / (60 * 60)) >= 1) return "1 hour ago";
                 else if (Math.round(seconds / 60) >= 2) return Math.round(seconds / 60) + " minutes ago";
                 else if (Math.round(seconds / 60) >= 1) return "1 minute ago";
-                else if (seconds >= 2) return "seconds ago";
+                else if (seconds >= 2) return this.translate("seconds ago");
                 else return  "seconds ago";
             }
 
             var dcontain = document.createElement("div");
             dcontain.classList.add("flex-item","dateColor");
-            dcontain.innerHTML = date + "<br> " + news.source.name + "<br>" + timeago(date);
+            dcontain.innerHTML = date + "<br> " + news.source.name + "<br>" + (this.translate(timeago(date)));
             wrapper.appendChild(dcontain);
 
             var nextThis = document.createElement("div");
@@ -131,7 +156,7 @@ Module.register("MMM-Jnews", {
         }
         return wrapper;
     },
-
+	
     processNews: function(data) {
         this.today = data.Today;
         this.news = data.articles;
