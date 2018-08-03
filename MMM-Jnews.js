@@ -12,7 +12,7 @@ Module.register("MMM-Jnews", {
         animationSpeed: 110,
         initialLoadDelay: 5, // 0 seconds delay
         retryDelay: 2500,
-        rotateInterval: 60 * 60 * 1000,
+        rotateInterval: 30 * 1000,
         apiKey: "",
 		image: false,
 		clang: ""
